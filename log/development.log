@@ -7452,3 +7452,417 @@ Processing by ProductsController#edit as HTML
 Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-02-17 08:02:16 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (1.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 18.7ms | GC: 0.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.0ms | GC: 0.1ms)
+Completed 200 OK in 51ms (Views: 26.3ms | ActiveRecord: 1.2ms (2 queries, 0 cached) | GC: 1.2ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2025-02-17 08:02:18 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:49:in 'Authentication#terminate_session'
+  [1m[36mSession Destroy (0.5ms)[0m  [1m[31mDELETE FROM "sessions" WHERE "sessions"."id" = 8 /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:49:in 'Authentication#terminate_session'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:49:in 'Authentication#terminate_session'
+Redirected to http://127.0.0.1:3000/session/new
+Completed 302 Found in 17ms (ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2025-02-17 08:02:18 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 12.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 16.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2025-02-17 08:02:19 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.0ms)
+Completed 200 OK in 14ms (Views: 5.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2025-02-17 08:02:19 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2025-02-17 08:02:20 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2025-02-17 08:02:24 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x00007a28cb31ae70>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'you@example.org' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mSession Create (0.7ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "ip_address", "user_agent", "created_at", "updated_at") VALUES (1, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', '2025-02-17 15:02:24.584023', '2025-02-17 15:02:24.584023') RETURNING "id" /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 185ms (ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-17 08:02:24 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 3.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 4.5ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Started GET "/products/new" for 127.0.0.1 at 2025-02-17 08:11:41 -0700
+  
+NoMethodError (undefined method 'allow_unauthenticated_access' for class ProductsController):
+  
+app/controllers/products_controller.rb:2:in '<class:ProductsController>'
+app/controllers/products_controller.rb:1:in '<main>'
+Started GET "/products/new" for 127.0.0.1 at 2025-02-17 08:12:06 -0700
+  
+NoMethodError (undefined method 'allow_unauthenticated_access' for class ProductsController):
+  
+app/controllers/products_controller.rb:2:in '<class:ProductsController>'
+app/controllers/products_controller.rb:1:in '<main>'
+Started GET "/products/new" for 127.0.0.1 at 2025-02-17 08:15:50 -0700
+  
+NoMethodError (undefined method 'allow_unauthenticated_access' for class ProductsController):
+  
+app/controllers/products_controller.rb:2:in '<class:ProductsController>'
+app/controllers/products_controller.rb:1:in '<main>'
+Started GET "/products/new" for 127.0.0.1 at 2025-02-17 08:15:50 -0700
+  
+NoMethodError (undefined method 'allow_unauthenticated_access' for class ProductsController):
+  
+app/controllers/products_controller.rb:2:in '<class:ProductsController>'
+app/controllers/products_controller.rb:1:in '<main>'
+Started GET "/products/new" for 127.0.0.1 at 2025-02-17 08:18:29 -0700
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (1.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 13.1ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-17 08:18:32 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 5.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2025-02-17 08:18:33 -0700
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 1.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-17 08:18:34 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 8.2ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-02-17 08:18:54 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 22.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | GC: 0.0ms)
+Completed 200 OK in 46ms (Views: 26.8ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=en" for 127.0.0.1 at 2025-02-17 08:19:02 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "en"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 2.7ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:19:06 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+I18n::InvalidLocale ("es" is not a valid locale):
+  
+app/controllers/application_controller.rb:9:in 'ApplicationController#switch_locale'
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:20:23 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 19.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 22.7ms | ActiveRecord: 3.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:21:42 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 15.9ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | GC: 1.0ms)
+Completed 200 OK in 43ms (Views: 19.0ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:21:44 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:21:45 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.2ms)
+Completed 200 OK in 11ms (Views: 2.2ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:21:45 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 1.8ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:21:45 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 1.9ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:21:45 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 1.7ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:21:56 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 16.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | GC: 0.0ms)
+Completed 200 OK in 47ms (Views: 18.8ms | ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:21:57 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 2.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 3.0ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:21:57 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 2.3ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:22:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 44.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | GC: 0.0ms)
+Completed 200 OK in 112ms (Views: 45.0ms | ActiveRecord: 5.2ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-17 08:22:10 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (1.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 15.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 19.7ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-02-17 08:22:18 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 12.7ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:22:49 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 4.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 7.5ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:23:35 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (1.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 79.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 86.1ms | GC: 0.0ms)
+Completed 200 OK in 116ms (Views: 86.4ms | ActiveRecord: 3.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+

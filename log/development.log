@@ -6690,3 +6690,765 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 20ms (Views: 10.3ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2025-02-17 06:42:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (Duration: 43.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | GC: 0.0ms)
+Completed 200 OK in 111ms (Views: 44.1ms | ActiveRecord: 5.3ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2025-02-17 06:42:11 -0700
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 11.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 16.0ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-17 06:42:14 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/index.html.erb within layouts/application (Duration: 9.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 13.3ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2025-02-17 06:42:15 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:4118882a5af1dd065ffd9a250cbfbd67/products/2-20250210025538706256 (10.2ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+Write fragment views/products/show:4118882a5af1dd065ffd9a250cbfbd67/products/2-20250210025538706256 (0.7ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 117.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 120.3ms | GC: 0.0ms)
+Completed 200 OK in 134ms (Views: 119.1ms | ActiveRecord: 1.5ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 06:42:53 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:4
+  Rendered products/_form.html.erb (Duration: 24.0ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 32.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 36.8ms | GC: 0.0ms)
+Completed 200 OK in 101ms (Views: 38.8ms | ActiveRecord: 2.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 06:43:39 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:4
+  Rendered products/_form.html.erb (Duration: 25.6ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 27.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | GC: 0.0ms)
+Completed 200 OK in 43ms (Views: 29.0ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 06:45:38 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 13.4ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 17.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | GC: 0.0ms)
+Completed 200 OK in 73ms (Views: 20.6ms | ActiveRecord: 2.4ms (3 queries, 0 cached) | GC: 1.6ms)
+
+
+Started PATCH "/products/2" for 127.0.0.1 at 2025-02-17 06:45:43 -0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "product" => {"name" => "Pants", "description" => ""}, "commit" => "Update Product", "id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mActionText::RichText Load (1.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mActionText::RichText Create (0.1ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ('description', '', 'Product', 2, '2025-02-17 13:45:43.139353', '2025-02-17 13:45:43.139353') RETURNING "id" /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-02-17 13:45:43.153697' WHERE "products"."id" = 2 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+Redirected to http://127.0.0.1:3000/products/2
+Completed 302 Found in 58ms (ActiveRecord: 3.5ms (5 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2025-02-17 06:45:43 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:4118882a5af1dd065ffd9a250cbfbd67/products/2-20250217134543153697 (0.6ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  Rendered /home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+Write fragment views/products/show:4118882a5af1dd065ffd9a250cbfbd67/products/2-20250217134543153697 (0.3ms)
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 64.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | GC: 0.4ms)
+Completed 200 OK in 76ms (Views: 65.9ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 06:45:45 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 9.4ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 10.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 10.6ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:09:18 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (1.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 21.5ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 23.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | GC: 0.0ms)
+Completed 200 OK in 81ms (Views: 26.3ms | ActiveRecord: 1.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:09:19 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 5.3ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 6.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 7.4ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:09:19 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 6.8ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 7.8ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:09:20 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 7.9ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 8.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 8.4ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/products/2" for 127.0.0.1 at 2025-02-17 07:09:38 -0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "product" => {"name" => "Pants", "featured_image" => #<ActionDispatch::Http::UploadedFile:0x00007a28d9636bf0 @tempfile=#<Tempfile:/tmp/RackMultipart20250217-36935-g7w83i.png>, @content_type="image/png", @original_filename="Screenshot from 2025-02-17 06-43-25.png", @headers="Content-Disposition: form-data; name=\"product[featured_image]\"; filename=\"Screenshot from 2025-02-17 06-43-25.png\"\r\nContent-Type: image/png\r\n">, "description" => ""}, "commit" => "Update Product", "id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mActiveStorage::Blob Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ('e73kjk096i79kyc20dkaq7jbl64t', 'Screenshot from 2025-02-17 06-43-25.png', 'image/png', '{"identified":true}', 'local', 7726, 'qJ+6vMYVpyI/ehWfmxlUGA==', '2025-02-17 14:09:38.215311') RETURNING "id" /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mActiveStorage::Attachment Create (0.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ('featured_image', 'Product', 2, 1, '2025-02-17 14:09:38.223203') RETURNING "id" /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-02-17 14:09:38.228031' WHERE "products"."id" = 2 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+[36m  Disk Storage (0.2ms) [0m[32mUploaded file to key: e73kjk096i79kyc20dkaq7jbl64t (checksum: qJ+6vMYVpyI/ehWfmxlUGA==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: d05c6e15-dfcc-44e8-be09-322a02f13932) to Async(default) with arguments: #<GlobalID:0x00007a28da591898 @uri=#<URI::GID gid://store/ActiveStorage::Blob/1>>
+[ActiveJob] ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+Redirected to http://127.0.0.1:3000/products/2
+Completed 302 Found in 233ms (ActiveRecord: 2.3ms (8 queries, 0 cached) | GC: 25.8ms)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*application='Store'*/[0m
+Started GET "/products/2" for 127.0.0.1 at 2025-02-17 07:09:38 -0700
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932] Performing ActiveStorage::AnalyzeJob (Job ID: d05c6e15-dfcc-44e8-be09-322a02f13932) from Async(default) enqueued at 2025-02-17T14:09:38.296288452Z with arguments: #<GlobalID:0x00007a28da3cc9e0 @uri=#<URI::GID gid://store/ActiveStorage::Blob/1>>
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932] Skipping image analysis because the ruby-vips gem isn't installed
+  Rendering layout layouts/application.html.erb
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+  Rendering products/show.html.erb within layouts/application
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932]   [1m[36mActiveStorage::Blob Update (1.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = '{"identified":true,"analyzed":true}' WHERE "active_storage_blobs"."id" = 1 /*application='Store',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = 1 /*application='Store',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+Read fragment views/products/show:7fc7a9ce291a48ffdaa04c01263d6e19/products/2-20250217140938228031 (0.4ms)
+  [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 /*application='Store',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932]   [1m[36mProduct Update (0.1ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = '2025-02-17 14:09:38.431927' WHERE "products"."id" = 2 /*application='Store',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+  Rendered /home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 8.1ms | GC: 0.0ms)
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store',job='ActiveStorage%3A%3AAnalyzeJob'*/[0m
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [d05c6e15-dfcc-44e8-be09-322a02f13932] Performed ActiveStorage::AnalyzeJob (Job ID: d05c6e15-dfcc-44e8-be09-322a02f13932) from Async(default) in 123.03ms
+  ↳ app/views/products/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+Write fragment views/products/show:7fc7a9ce291a48ffdaa04c01263d6e19/products/2-20250217140938228031 (0.2ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 68.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 76.2ms | GC: 0.4ms)
+Completed 200 OK in 110ms (Views: 77.9ms | ActiveRecord: 1.1ms (5 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--d3901fd32ca4c4d4fd7e409a9962ced254679cbd/Screenshot%20from%202025-02-17%2006-43-25.png" for 127.0.0.1 at 2025-02-17 07:09:38 -0700
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id" => "eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--d3901fd32ca4c4d4fd7e409a9962ced254679cbd", "filename" => "Screenshot from 2025-02-17 06-43-25"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='redirect'*/[0m
+[36m  Disk Storage (2.6ms) [0m[34mGenerated URL for file at key: e73kjk096i79kyc20dkaq7jbl64t (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0xN1QxNDoxNDozOC41MzRaIiwicHVyIjoiYmxvYl9rZXkifX0=--b1d31cd63e82ceac0178358761229a8c4e1d1e7e/Screenshot%20from%202025-02-17%2006-43-25.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0xN1QxNDoxNDozOC41MzRaIiwicHVyIjoiYmxvYl9rZXkifX0=--b1d31cd63e82ceac0178358761229a8c4e1d1e7e/Screenshot%20from%202025-02-17%2006-43-25.png
+Completed 302 Found in 24ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0xN1QxNDoxNDozOC41MzRaIiwicHVyIjoiYmxvYl9rZXkifX0=--b1d31cd63e82ceac0178358761229a8c4e1d1e7e/Screenshot%20from%202025-02-17%2006-43-25.png" for 127.0.0.1 at 2025-02-17 07:09:38 -0700
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key" => "[FILTERED]", "filename" => "Screenshot from 2025-02-17 06-43-25"}
+Completed 200 OK in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:09:43 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 6.7ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 11.1ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/products/2" for 127.0.0.1 at 2025-02-17 07:09:44 -0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "product" => {"name" => "Pants", "description" => ""}, "commit" => "Update Product", "id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+Redirected to http://127.0.0.1:3000/products/2
+Completed 302 Found in 16ms (ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2025-02-17 07:09:44 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:7fc7a9ce291a48ffdaa04c01263d6e19/products/2-20250217140938431927 (0.2ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  Rendered /home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+Write fragment views/products/show:7fc7a9ce291a48ffdaa04c01263d6e19/products/2-20250217140938431927 (0.1ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 14.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.6ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 17.8ms | ActiveRecord: 0.3ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0xN1QxNDoxNDozOC41MzRaIiwicHVyIjoiYmxvYl9rZXkifX0=--b1d31cd63e82ceac0178358761229a8c4e1d1e7e/Screenshot%20from%202025-02-17%2006-43-25.png" for 127.0.0.1 at 2025-02-17 07:09:44 -0700
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key" => "[FILTERED]", "filename" => "Screenshot from 2025-02-17 06-43-25"}
+Completed 304 Not Modified in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:09:46 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 16.5ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 17.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 18.3ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:14:42 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.0ms | GC: 0.3ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 4.7ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | GC: 0.3ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method 'from' for an instance of #<Class:0x00007a28cb662b28>)
+Caused by: NameError (undefined local variable or method 'from' for an instance of #<Class:0x00007a28cb662b28>)
+
+Information for: ActionView::Template::Error (undefined local variable or method 'from' for an instance of #<Class:0x00007a28cb662b28>):
+    11: 
+    12:   <div>
+    13:     <%= form.label :description, style: "display: block" %>
+    14:     <%= from.rich_text_area :description %>
+    15:   </div>
+    16: 
+    17: 
+  
+app/views/products/_form.html.erb:14
+app/views/products/_form.html.erb:1
+app/views/products/edit.html.erb:3
+
+Information for cause: NameError (undefined local variable or method 'from' for an instance of #<Class:0x00007a28cb662b28>):
+  
+app/views/products/_form.html.erb:14
+app/views/products/_form.html.erb:1
+app/views/products/edit.html.erb:3
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:14:49 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 9.9ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 12.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | GC: 0.0ms)
+Completed 200 OK in 61ms (Views: 15.1ms | ActiveRecord: 2.0ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:14:57 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 8.2ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 8.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 9.8ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:00 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:13
+  Rendered products/_form.html.erb (Duration: 10.4ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 11.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | GC: 0.0ms)
+Completed 200 OK in 58ms (Views: 17.1ms | ActiveRecord: 1.8ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:01 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:13
+  Rendered products/_form.html.erb (Duration: 3.5ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 3.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 4.6ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:01 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:13
+  Rendered products/_form.html.erb (Duration: 5.1ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 5.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 6.0ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:07 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:13
+  Rendered products/_form.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 8.9ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:09 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.9ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 6.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | GC: 0.0ms)
+Completed 200 OK in 51ms (Views: 13.3ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:10 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.7ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 4.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 6.1ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:10 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 4.6ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 6.6ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:11 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.4ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 2.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:11 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 1.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:11 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 2.0ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:11 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 2.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 13ms (Views: 3.8ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/products/2" for 127.0.0.1 at 2025-02-17 07:15:11 -0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "product" => {"name" => "Pants"}, "commit" => "Update Product", "id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+Redirected to http://127.0.0.1:3000/products/2
+Completed 302 Found in 17ms (ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2025-02-17 07:15:11 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:7fc7a9ce291a48ffdaa04c01263d6e19/products/2-20250217140938431927 (1.8ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 6.3ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | GC: 0.2ms)
+Completed 200 OK in 17ms (Views: 6.8ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--d3901fd32ca4c4d4fd7e409a9962ced254679cbd/Screenshot%20from%202025-02-17%2006-43-25.png" for 127.0.0.1 at 2025-02-17 07:15:11 -0700
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id" => "eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--d3901fd32ca4c4d4fd7e409a9962ced254679cbd", "filename" => "Screenshot from 2025-02-17 06-43-25"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='redirect'*/[0m
+[36m  Disk Storage (2.2ms) [0m[34mGenerated URL for file at key: e73kjk096i79kyc20dkaq7jbl64t (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0xN1QxNDoyMDoxMS45NzRaIiwicHVyIjoiYmxvYl9rZXkifX0=--83986a74a2407ea2ddd278dba089fcf2f851309e/Screenshot%20from%202025-02-17%2006-43-25.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0xN1QxNDoyMDoxMS45NzRaIiwicHVyIjoiYmxvYl9rZXkifX0=--83986a74a2407ea2ddd278dba089fcf2f851309e/Screenshot%20from%202025-02-17%2006-43-25.png
+Completed 302 Found in 24ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0xN1QxNDoyMDoxMS45NzRaIiwicHVyIjoiYmxvYl9rZXkifX0=--83986a74a2407ea2ddd278dba089fcf2f851309e/Screenshot%20from%202025-02-17%2006-43-25.png" for 127.0.0.1 at 2025-02-17 07:15:11 -0700
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key" => "[FILTERED]", "filename" => "Screenshot from 2025-02-17 06-43-25"}
+Completed 200 OK in 9ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:15:14 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.9ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 4.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | GC: 0.0ms)
+Completed 200 OK in 15ms (Views: 5.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:18:09 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 14.0ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 16.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | GC: 0.0ms)
+Completed 200 OK in 61ms (Views: 25.8ms | ActiveRecord: 1.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:18:09 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 5.2ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 5.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 6.7ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:18:10 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 1.8ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | GC: 0.0ms)
+Completed 200 OK in 12ms (Views: 2.2ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 07:18:10 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 8 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 7.2ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 7.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 19ms (Views: 8.3ms | ActiveRecord: 0.2ms (3 queries, 0 cached) | GC: 0.0ms)
+
+

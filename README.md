@@ -9,21 +9,21 @@ It allows you to write less code while accomplishing more than many other langua
 Things you may want to cover:
 
 * For this Project, you will need:
-  Ruby 3.2 or newer
-  Rails 8.0.0 or newer
-  A code editor:VScode
+  1. Ruby 3.2 or newer
+  2. Rails 8.0.0 or newer
+  3. A code editor:VScode
 * System dependencies
 
 * Configuration
   start: bin/rails server
 * Database creation
-  bin/rails generate model Product name:string
-  Createing Records: Product.new(name: "")
-  Querying Records: Product.all
-  Filtering & Ordering Records: Product.where(name: "")
-  Finding Records: Product.find()
-  Updating Records: product.update(name: "")
-  Deleting Records: product.destory
+  1. bin/rails generate model Product name:string
+  2. Createing Records: Product.new(name: "")
+  3. Querying Records: Product.all
+  4. Filtering & Ordering Records: Product.where(name: "")
+  5. Finding Records: Product.find()
+  6. Updating Records: product.update(name: "")
+  7. Deleting Records: product.destory
 * Database initialization
   bin/rails db:migrate
 * How to run the test suite

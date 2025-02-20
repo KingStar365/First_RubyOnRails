@@ -7866,3 +7866,1338 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 116ms (Views: 86.4ms | ActiveRecord: 3.6ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/products?locale=es" for 127.0.0.1 at 2025-02-17 08:25:15 -0700
+Processing by ProductsController#index as HTML
+  Parameters: {"locale" => "es"}
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 54.3ms | GC: 14.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 56.4ms | GC: 15.5ms)
+Completed 200 OK in 96ms (Views: 55.7ms | ActiveRecord: 2.6ms (2 queries, 0 cached) | GC: 29.9ms)
+
+
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Migrating to AddInventoryCountToProducts (20250217155402)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250217155402') RETURNING "version" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 08:58:48 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 56.8ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 58.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 62.4ms | GC: 0.0ms)
+Completed 200 OK in 178ms (Views: 65.4ms | ActiveRecord: 7.2ms (3 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/products/2/edit" for 127.0.0.1 at 2025-02-17 09:03:03 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 55.7ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 57.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 61.7ms | GC: 0.0ms)
+Completed 200 OK in 178ms (Views: 64.6ms | ActiveRecord: 7.0ms (3 queries, 0 cached) | GC: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-17 09:03:09 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 9.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 11.3ms | ActiveRecord: 0.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/session" for 127.0.0.1 at 2025-02-17 09:03:09 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 9 LIMIT 1 /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:49:in 'Authentication#terminate_session'
+  [1m[36mSession Destroy (1.4ms)[0m  [1m[31mDELETE FROM "sessions" WHERE "sessions"."id" = 9 /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:49:in 'Authentication#terminate_session'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:49:in 'Authentication#terminate_session'
+Redirected to http://127.0.0.1:3000/session/new
+Completed 302 Found in 41ms (ActiveRecord: 2.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2025-02-17 09:03:09 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 10.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2025-02-17 09:03:14 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x000073b88f573fd0>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'you@example.org' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mSession Create (1.2ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "ip_address", "user_agent", "created_at", "updated_at") VALUES (1, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', '2025-02-17 16:03:14.316910', '2025-02-17 16:03:14.316910') RETURNING "id" /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 225ms (ActiveRecord: 2.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-17 09:03:14 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 10 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 7.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 9.3ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2025-02-17 09:03:15 -0700
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 10 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 22.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | GC: 0.0ms)
+Completed 200 OK in 45ms (Views: 27.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-17 09:03:18 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 10 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 11.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 13.7ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2025-02-17 09:03:22 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:7fc7a9ce291a48ffdaa04c01263d6e19/products/1-20250210031140240033 (1.0ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 1 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+Write fragment views/products/show:7fc7a9ce291a48ffdaa04c01263d6e19/products/1-20250210031140240033 (0.3ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 10 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 47.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 49.0ms | GC: 0.0ms)
+Completed 200 OK in 61ms (Views: 49.1ms | ActiveRecord: 0.6ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/1/edit" for 127.0.0.1 at 2025-02-17 09:03:25 -0700
+Processing by ProductsController#edit as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 10 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 1 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='edit',application='Store',controller='products'*/[0m
+  ↳ app/views/products/_form.html.erb:14
+  Rendered products/_form.html.erb (Duration: 17.3ms | GC: 0.0ms)
+  Rendered products/edit.html.erb within layouts/application (Duration: 18.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 21.1ms | ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/products/1" for 127.0.0.1 at 2025-02-17 09:03:33 -0700
+Processing by ProductsController#update as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "product" => {"name" => "T-shirts", "featured_image" => #<ActionDispatch::Http::UploadedFile:0x000073b88f1a9f80 @tempfile=#<Tempfile:/tmp/RackMultipart20250217-79100-724127.png>, @content_type="image/png", @original_filename="Screenshot(1).png", @headers="Content-Disposition: form-data; name=\"product[featured_image]\"; filename=\"Screenshot(1).png\"\r\nContent-Type: image/png\r\n">, "description" => "", "inventory_count" => "6"}, "commit" => "Update Product", "id" => "1"}
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 10 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mActionText::RichText Load (0.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 1 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION /*action='update',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:29:in 'ProductsController#update'
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 1.2ms (3 queries, 0 cached) | GC: 2.6ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'inventory_count' for Product.)
+Caused by: NoMethodError (undefined method 'inventory_count=' for an instance of Product)
+
+Information for: ActiveModel::UnknownAttributeError (unknown attribute 'inventory_count' for Product.):
+  
+app/controllers/products_controller.rb:29:in 'ProductsController#update'
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+
+Information for cause: NoMethodError (undefined method 'inventory_count=' for an instance of Product):
+  
+app/controllers/products_controller.rb:29:in 'ProductsController#update'
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Migrating to CreateSubscribers (20250220030832)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "subscribers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_17ccf21a20"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+) /*application='Store'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_subscribers_on_product_id" ON "subscribers" ("product_id") /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250220030832') RETURNING "version" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-02-19 20:21:45 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 10 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 52.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 55.3ms | GC: 0.0ms)
+Completed 200 OK in 267ms (Views: 55.3ms | ActiveRecord: 5.1ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-02-19 20:21:46 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started DELETE "/session" for 127.0.0.1 at 2025-02-19 20:21:48 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]"}
+  [1m[36mSession Load (1.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 10 LIMIT 1 /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:49:in 'Authentication#terminate_session'
+  [1m[36mSession Destroy (1.5ms)[0m  [1m[31mDELETE FROM "sessions" WHERE "sessions"."id" = 10 /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:49:in 'Authentication#terminate_session'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:49:in 'Authentication#terminate_session'
+Redirected to http://127.0.0.1:3000/session/new
+Completed 302 Found in 49ms (ActiveRecord: 3.5ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2025-02-19 20:21:48 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 8.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2025-02-19 20:21:54 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in"}
+[31mUnpermitted parameters: :authenticity_token, :commit. Context: { controller: SessionsController, action: create, request: #<ActionDispatch::Request:0x000073f323408708>, params: {"authenticity_token" => "[FILTERED]", "email_address" => "[FILTERED]", "password" => "[FILTERED]", "commit" => "Sign in", "controller" => "sessions", "action" => "create"} }[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email_address" = 'you@example.org' LIMIT 1 /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/sessions_controller.rb:9:in 'SessionsController#create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mSession Create (0.7ms)[0m  [1m[32mINSERT INTO "sessions" ("user_id", "ip_address", "user_agent", "created_at", "updated_at") VALUES (1, '127.0.0.1', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36', '2025-02-20 03:21:54.460974', '2025-02-20 03:21:54.460974') RETURNING "id" /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Store',controller='sessions'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:42:in 'Authentication#start_new_session_for'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 241ms (ActiveRecord: 1.1ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-19 20:21:54 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.9ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 19.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 20.6ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 22.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2025-02-19 20:21:56 -0700
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 15.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 17.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-19 20:22:01 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | GC: 0.4ms)
+Completed 200 OK in 23ms (Views: 10.7ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2025-02-19 20:22:02 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 4 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:fab06c88923daa77f1cfa96e83d439b1/products/4-20250216232532171587 (0.9ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 4 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+Write fragment views/products/show:fab06c88923daa77f1cfa96e83d439b1/products/4-20250216232532171587 (0.8ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/_inventory.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 139.3ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 139.5ms | GC: 0.5ms)
+Completed 500 Internal Server Error in 156ms (ActiveRecord: 1.1ms (4 queries, 0 cached) | GC: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product)
+Caused by: NoMethodError (undefined method 'inventory_count?' for an instance of Product)
+
+Information for: ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product):
+    1: <% if product.inventory_count? %>
+    2:   <p><%= product.inventory_count %> in stock</p>
+    3: <% else %>
+    4:   <p>Out of stock</p>
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:11
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+
+Information for cause: NoMethodError (undefined method 'inventory_count?' for an instance of Product):
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:11
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+Started GET "/" for 127.0.0.1 at 2025-02-19 20:26:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (2.7ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 42.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 45.3ms | GC: 0.0ms)
+Completed 200 OK in 106ms (Views: 43.3ms | ActiveRecord: 5.1ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/products/6" for 127.0.0.1 at 2025-02-19 20:26:22 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "6"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 6 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:fab06c88923daa77f1cfa96e83d439b1/products/6-20250217132447962240 (10.7ms)
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 6 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+Write fragment views/products/show:fab06c88923daa77f1cfa96e83d439b1/products/6-20250217132447962240 (0.8ms)
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/_inventory.html.erb (Duration: 3.3ms | GC: 0.0ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 105.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 107.3ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 1.9ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product)
+Caused by: NoMethodError (undefined method 'inventory_count?' for an instance of Product)
+
+Information for: ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product):
+    1: <% if product.inventory_count? %>
+    2:   <p><%= product.inventory_count %> in stock</p>
+    3: <% else %>
+    4:   <p>Out of stock</p>
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:11
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+
+Information for cause: NoMethodError (undefined method 'inventory_count?' for an instance of Product):
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:11
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+Started GET "/" for 127.0.0.1 at 2025-02-19 20:35:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (2.8ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 44.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 47.4ms | GC: 0.0ms)
+Completed 200 OK in 108ms (Views: 45.5ms | ActiveRecord: 5.1ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2025-02-19 20:35:14 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "4"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 4 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/4-20250216232532171587 (10.3ms)
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 4 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 3.2ms | GC: 0.0ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 86.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 88.0ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 1.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product)
+Caused by: NoMethodError (undefined method 'inventory_count?' for an instance of Product)
+
+Information for: ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product):
+    1: <% if product.inventory_count? %>
+    2:   <p><%= product.inventory_count %> in stock</p>
+    3: <% else %>
+    4:   <p>Out of stock</p>
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:5
+app/views/products/show.html.erb:1
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+
+Information for cause: NoMethodError (undefined method 'inventory_count?' for an instance of Product):
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:5
+app/views/products/show.html.erb:1
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-02-19 20:36:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (3.8ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 49.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 52.9ms | GC: 0.0ms)
+Completed 200 OK in 116ms (Views: 49.9ms | ActiveRecord: 6.3ms (2 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2025-02-19 20:36:56 -0700
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 10.1ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/products" for 127.0.0.1 at 2025-02-19 20:37:00 -0700
+Processing by ProductsController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "product" => {"name" => "890"}, "commit" => "Create Product"}
+  [1m[36mSession Load (0.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='create',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+NoMethodError (undefined method 'inventory_count' for an instance of Product):
+  
+app/controllers/products_controller.rb:18:in 'ProductsController#create'
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+Started GET "/products/4" for 127.0.0.1 at 2025-02-19 20:40:50 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 4 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/4-20250216232532171587 (9.7ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 4 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 100.8ms | GC: 2.9ms)
+  Rendered layout layouts/application.html.erb (Duration: 101.1ms | GC: 2.9ms)
+Completed 500 Internal Server Error in 119ms (ActiveRecord: 1.8ms (3 queries, 0 cached) | GC: 2.9ms)
+
+
+  
+ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product)
+Caused by: NoMethodError (undefined method 'inventory_count?' for an instance of Product)
+
+Information for: ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product):
+    1: <% if product.inventory_count? %>
+    2:   <p><%= product.inventory_count %> in stock</p>
+    3: <% else %>
+    4:   <p>Out of stock</p>
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:5
+app/views/products/show.html.erb:1
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+
+Information for cause: NoMethodError (undefined method 'inventory_count?' for an instance of Product):
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:5
+app/views/products/show.html.erb:1
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+Started GET "/products/1" for 127.0.0.1 at 2025-02-19 20:40:57 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/1-20250210031140240033 (0.8ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 1 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 15.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 0.3ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product)
+Caused by: NoMethodError (undefined method 'inventory_count?' for an instance of Product)
+
+Information for: ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product):
+    1: <% if product.inventory_count? %>
+    2:   <p><%= product.inventory_count %> in stock</p>
+    3: <% else %>
+    4:   <p>Out of stock</p>
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:5
+app/views/products/show.html.erb:1
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+
+Information for cause: NoMethodError (undefined method 'inventory_count?' for an instance of Product):
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:5
+app/views/products/show.html.erb:1
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mProduct Load (22.4ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mSubscriber Load (0.1ms)[0m  [1m[34mSELECT "subscribers".* FROM "subscribers" WHERE "subscribers"."product_id" = 1 AND "subscribers"."email" = 'subscriber@example.org' LIMIT 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mSubscriber Create (0.9ms)[0m  [1m[32mINSERT INTO "subscribers" ("product_id", "email", "created_at", "updated_at") VALUES (1, 'subscriber@example.org', '2025-02-20 16:37:39.343234', '2025-02-20 16:37:39.343234') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: fb3a77c0-7ca6-41b1-9053-a90c866d6b8f) to Async(default) with arguments: "ProductMailer", "in_stock", "deliver_now", {params: {product: #<GlobalID:0x000072a3d451a6b8 @uri=#<URI::GID gid://store/Product/1>>, subscriber: #<GlobalID:0x000072a3d4519538 @uri=#<URI::GID gid://store/Subscriber/1>>}, args: []}
+[ActiveJob] ↳ (store):3:in '<main>'
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   [1m[36mProduct Load (1.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*application='Store'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   [1m[36mSubscriber Load (0.1ms)[0m  [1m[34mSELECT "subscribers".* FROM "subscribers" WHERE "subscribers"."id" = 1 LIMIT 1 /*application='Store'*/[0m
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f] Performing ActionMailer::MailDeliveryJob (Job ID: fb3a77c0-7ca6-41b1-9053-a90c866d6b8f) from Async(default) enqueued at 2025-02-20T16:38:09.180211430Z with arguments: "ProductMailer", "in_stock", "deliver_now", {params: {product: #<GlobalID:0x000072a3cbdd3718 @uri=#<URI::GID gid://store/Product/1>>, subscriber: #<GlobalID:0x000072a3cbdd32b8 @uri=#<URI::GID gid://store/Subscriber/1>>}, args: []}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   Rendering product_mailer/in_stock.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   Rendered product_mailer/in_stock.html.erb within layouts/mailer (Duration: 0.7ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   Rendered layout layouts/mailer.html.erb (Duration: 2.0ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   Rendering layout layouts/mailer.text.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   Rendering product_mailer/in_stock.text.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   Rendered product_mailer/in_stock.text.erb within layouts/mailer (Duration: 1.8ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f]   Rendered layout layouts/mailer.text.erb (Duration: 3.7ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f] ProductMailer#in_stock: processed outbound mail in 138.6ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f] Delivered mail 67b75a716f4f8_18ee16730-312@robbie-stewart-VMware-Virtual-Platform.mail (36.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f] Date: Thu, 20 Feb 2025 09:38:09 -0700
+From: from@example.com
+To: subscriber@example.org
+Message-ID: <67b75a716f4f8_18ee16730-312@robbie-stewart-VMware-Virtual-Platform.mail>
+Subject: In stock
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_67b75a716b6c6_18ee16730-4ae";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_67b75a716b6c6_18ee16730-4ae
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Good news!
+
+T-shirts is back in stock.
+http://localhost:3000/products/1
+
+
+----==_mimepart_67b75a716b6c6_18ee16730-4ae
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!-- BEGIN app/views/layouts/mailer.html.erb --><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <!-- BEGIN app/views/product_mailer/in_stock.html.erb --><h1>Good news!</h1>
+
+<p><a href="http://localhost:3000/products/1">T-shirts</a> is back in stock.</p>
+<!-- END app/views/product_mailer/in_stock.html.erb -->
+  </body>
+</html>
+<!-- END app/views/layouts/mailer.html.erb -->
+----==_mimepart_67b75a716b6c6_18ee16730-4ae--
+
+[ActiveJob] [ActionMailer::MailDeliveryJob] [fb3a77c0-7ca6-41b1-9053-a90c866d6b8f] Performed ActionMailer::MailDeliveryJob (Job ID: fb3a77c0-7ca6-41b1-9053-a90c866d6b8f) from Async(default) in 231.05ms
+Started GET "/" for 127.0.0.1 at 2025-02-20 09:43:34 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 59.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 62.6ms | GC: 0.0ms)
+Completed 200 OK in 224ms (Views: 86.6ms | ActiveRecord: 5.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-02-20 09:43:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/products/2" for 127.0.0.1 at 2025-02-20 09:43:36 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mProduct Load (0.9ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/2-20250217140938431927 (13.3ms)
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  Rendered /home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.3ms | GC: 0.4ms)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 1.6ms | GC: 0.4ms)
+  Rendered products/show.html.erb within layouts/application (Duration: 256.1ms | GC: 1.7ms)
+  Rendered layout layouts/application.html.erb (Duration: 256.4ms | GC: 1.7ms)
+Completed 500 Internal Server Error in 279ms (ActiveRecord: 2.7ms (4 queries, 0 cached) | GC: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product)
+Caused by: NoMethodError (undefined method 'inventory_count?' for an instance of Product)
+
+Information for: ActionView::Template::Error (undefined method 'inventory_count?' for an instance of Product):
+    1: <% if product.inventory_count? %>
+    2:   <p><%= product.inventory_count %> in stock</p>
+    3: <% else %>
+    4:   <p>Out of stock</p>
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:5
+app/views/products/show.html.erb:1
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+
+Information for cause: NoMethodError (undefined method 'inventory_count?' for an instance of Product):
+  
+app/views/products/_inventory.html.erb:1
+app/views/products/show.html.erb:5
+app/views/products/show.html.erb:1
+app/controllers/application_controller.rb:10:in 'ApplicationController#switch_locale'
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:17:19 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250220183449_add_inventory_count_to_products.rb
+
+
+):
+  
+activerecord (8.0.1) lib/active_record/migration.rb:743:in 'ActiveRecord::Migration.check_pending_migrations'
+activerecord (8.0.1) lib/active_record/migration.rb:660:in 'block (2 levels) in ActiveRecord::Migration::CheckPending#call'
+activesupport (8.0.1) lib/active_support/file_update_checker.rb:85:in 'ActiveSupport::FileUpdateChecker#execute'
+activerecord (8.0.1) lib/active_record/migration.rb:665:in 'block in ActiveRecord::Migration::CheckPending#call'
+activerecord (8.0.1) lib/active_record/migration.rb:657:in 'Thread::Mutex#synchronize'
+activerecord (8.0.1) lib/active_record/migration.rb:657:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.0.1) lib/active_support/callbacks.rb:100:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.0.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.0.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/remote_ip.rb:96:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.1.9) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.1.9) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.1.9) lib/rack/sendfile.rb:114:in 'Rack::Sendfile#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.0.1) lib/rails/engine.rb:535:in 'Rails::Engine#call'
+puma (6.6.0) lib/puma/configuration.rb:279:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (6.6.0) lib/puma/request.rb:99:in 'block in Puma::Request#handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in 'Puma::ThreadPool#with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in 'Puma::Request#handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in 'Puma::Server#process_client'
+puma (6.6.0) lib/puma/server.rb:254:in 'block in Puma::Server#run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in 'block in Puma::ThreadPool#spawn_thread'
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:17:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250220183449_add_inventory_count_to_products.rb
+
+
+):
+  
+activerecord (8.0.1) lib/active_record/migration.rb:743:in 'ActiveRecord::Migration.check_pending_migrations'
+activerecord (8.0.1) lib/active_record/migration.rb:660:in 'block (2 levels) in ActiveRecord::Migration::CheckPending#call'
+activesupport (8.0.1) lib/active_support/file_update_checker.rb:85:in 'ActiveSupport::FileUpdateChecker#execute'
+activerecord (8.0.1) lib/active_record/migration.rb:665:in 'block in ActiveRecord::Migration::CheckPending#call'
+activerecord (8.0.1) lib/active_record/migration.rb:657:in 'Thread::Mutex#synchronize'
+activerecord (8.0.1) lib/active_record/migration.rb:657:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.0.1) lib/active_support/callbacks.rb:100:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.0.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.0.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/remote_ip.rb:96:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.1.9) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.1.9) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.1.9) lib/rack/sendfile.rb:114:in 'Rack::Sendfile#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.0.1) lib/rails/engine.rb:535:in 'Rails::Engine#call'
+puma (6.6.0) lib/puma/configuration.rb:279:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (6.6.0) lib/puma/request.rb:99:in 'block in Puma::Request#handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in 'Puma::ThreadPool#with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in 'Puma::Request#handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in 'Puma::Server#process_client'
+puma (6.6.0) lib/puma/server.rb:254:in 'block in Puma::Server#run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in 'block in Puma::ThreadPool#spawn_thread'
+Started POST "/rails/actions" for 127.0.0.1 at 2025-02-20 12:17:49 -0700
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Migrating to AddInventoryCountToProducts (20250220183449)
+  
+NoMethodError (undefined method 'inventory_count' for an instance of ActiveRecord::Migration)
+Caused by: NoMethodError (undefined method 'inventory_count' for an instance of ActiveRecord::Migration)
+
+Information for: NoMethodError (undefined method 'inventory_count' for an instance of ActiveRecord::Migration):
+  
+activerecord (8.0.1) lib/active_record/migration.rb:1055:in 'block in ActiveRecord::Migration#method_missing'
+activerecord (8.0.1) lib/active_record/migration.rb:1022:in 'block in ActiveRecord::Migration#say_with_time'
+activesupport (8.0.1) lib/active_support/benchmark.rb:17:in 'ActiveSupport::Benchmark.realtime'
+activerecord (8.0.1) lib/active_record/migration.rb:1022:in 'ActiveRecord::Migration#say_with_time'
+activerecord (8.0.1) lib/active_record/migration.rb:1045:in 'ActiveRecord::Migration#method_missing'
+activerecord (8.0.1) lib/active_record/migration.rb:724:in 'ActiveRecord::Migration.method_missing'
+db/migrate/20250220183449_add_inventory_count_to_products.rb:2:in '<class:AddInventoryCountToProducts>'
+db/migrate/20250220183449_add_inventory_count_to_products.rb:1:in '<main>'
+activerecord (8.0.1) lib/active_record/migration.rb:1197:in 'Kernel#load'
+activerecord (8.0.1) lib/active_record/migration.rb:1197:in 'ActiveRecord::MigrationProxy#load_migration'
+activerecord (8.0.1) lib/active_record/migration.rb:1191:in 'ActiveRecord::MigrationProxy#migration'
+activerecord (8.0.1) lib/active_record/migration.rb:1187:in 'ActiveRecord::MigrationProxy#disable_ddl_transaction'
+activerecord (8.0.1) lib/active_record/migration.rb:1593:in 'ActiveRecord::Migrator#use_transaction?'
+activerecord (8.0.1) lib/active_record/migration.rb:1540:in 'ActiveRecord::Migrator#execute_migration_in_transaction'
+activerecord (8.0.1) lib/active_record/migration.rb:1509:in 'Array#each'
+activerecord (8.0.1) lib/active_record/migration.rb:1509:in 'ActiveRecord::Migrator#migrate_without_lock'
+activerecord (8.0.1) lib/active_record/migration.rb:1456:in 'ActiveRecord::Migrator#migrate'
+activerecord (8.0.1) lib/active_record/migration.rb:1261:in 'ActiveRecord::MigrationContext#up'
+activerecord (8.0.1) lib/active_record/migration.rb:1236:in 'ActiveRecord::MigrationContext#migrate'
+activerecord (8.0.1) lib/active_record/tasks/database_tasks.rb:270:in 'ActiveRecord::Tasks::DatabaseTasks#migrate'
+activerecord (8.0.1) lib/active_record/migration.rb:151:in 'block in <class:PendingMigrationError>'
+activesupport (8.0.1) lib/active_support/actionable_error.rb:30:in 'ActiveSupport::ActionableError.dispatch'
+actionpack (8.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:20:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.0.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.0.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/remote_ip.rb:96:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.1.9) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.1.9) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.1.9) lib/rack/sendfile.rb:114:in 'Rack::Sendfile#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.0.1) lib/rails/engine.rb:535:in 'Rails::Engine#call'
+puma (6.6.0) lib/puma/configuration.rb:279:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (6.6.0) lib/puma/request.rb:99:in 'block in Puma::Request#handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in 'Puma::ThreadPool#with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in 'Puma::Request#handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in 'Puma::Server#process_client'
+puma (6.6.0) lib/puma/server.rb:254:in 'block in Puma::Server#run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in 'block in Puma::ThreadPool#spawn_thread'
+
+Information for cause: NoMethodError (undefined method 'inventory_count' for an instance of ActiveRecord::Migration):
+  
+activerecord (8.0.1) lib/active_record/migration.rb:1055:in 'block in ActiveRecord::Migration#method_missing'
+activerecord (8.0.1) lib/active_record/migration.rb:1022:in 'block in ActiveRecord::Migration#say_with_time'
+activesupport (8.0.1) lib/active_support/benchmark.rb:17:in 'ActiveSupport::Benchmark.realtime'
+activerecord (8.0.1) lib/active_record/migration.rb:1022:in 'ActiveRecord::Migration#say_with_time'
+activerecord (8.0.1) lib/active_record/migration.rb:1045:in 'ActiveRecord::Migration#method_missing'
+activerecord (8.0.1) lib/active_record/migration.rb:724:in 'ActiveRecord::Migration.method_missing'
+db/migrate/20250220183449_add_inventory_count_to_products.rb:2:in '<class:AddInventoryCountToProducts>'
+db/migrate/20250220183449_add_inventory_count_to_products.rb:1:in '<main>'
+activerecord (8.0.1) lib/active_record/migration.rb:1197:in 'Kernel#load'
+activerecord (8.0.1) lib/active_record/migration.rb:1197:in 'ActiveRecord::MigrationProxy#load_migration'
+activerecord (8.0.1) lib/active_record/migration.rb:1191:in 'ActiveRecord::MigrationProxy#migration'
+activerecord (8.0.1) lib/active_record/migration.rb:1187:in 'ActiveRecord::MigrationProxy#disable_ddl_transaction'
+activerecord (8.0.1) lib/active_record/migration.rb:1593:in 'ActiveRecord::Migrator#use_transaction?'
+activerecord (8.0.1) lib/active_record/migration.rb:1585:in 'ActiveRecord::Migrator#ddl_transaction'
+activerecord (8.0.1) lib/active_record/migration.rb:1534:in 'ActiveRecord::Migrator#execute_migration_in_transaction'
+activerecord (8.0.1) lib/active_record/migration.rb:1509:in 'Array#each'
+activerecord (8.0.1) lib/active_record/migration.rb:1509:in 'ActiveRecord::Migrator#migrate_without_lock'
+activerecord (8.0.1) lib/active_record/migration.rb:1456:in 'ActiveRecord::Migrator#migrate'
+activerecord (8.0.1) lib/active_record/migration.rb:1261:in 'ActiveRecord::MigrationContext#up'
+activerecord (8.0.1) lib/active_record/migration.rb:1236:in 'ActiveRecord::MigrationContext#migrate'
+activerecord (8.0.1) lib/active_record/tasks/database_tasks.rb:270:in 'ActiveRecord::Tasks::DatabaseTasks#migrate'
+activerecord (8.0.1) lib/active_record/migration.rb:151:in 'block in <class:PendingMigrationError>'
+activesupport (8.0.1) lib/active_support/actionable_error.rb:30:in 'ActiveSupport::ActionableError.dispatch'
+actionpack (8.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:20:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.0.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.0.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/remote_ip.rb:96:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.1.9) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.1.9) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.1.9) lib/rack/sendfile.rb:114:in 'Rack::Sendfile#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.0.1) lib/rails/engine.rb:535:in 'Rails::Engine#call'
+puma (6.6.0) lib/puma/configuration.rb:279:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (6.6.0) lib/puma/request.rb:99:in 'block in Puma::Request#handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in 'Puma::ThreadPool#with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in 'Puma::Request#handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in 'Puma::Server#process_client'
+puma (6.6.0) lib/puma/server.rb:254:in 'block in Puma::Server#run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in 'block in Puma::ThreadPool#spawn_thread'
+Started POST "/__web_console/repl_sessions/0588155ae84d33b5aa8a6caa831c297b/trace" for 127.0.0.1 at 2025-02-20 12:17:55 -0700
+Started POST "/__web_console/repl_sessions/0588155ae84d33b5aa8a6caa831c297b/trace" for 127.0.0.1 at 2025-02-20 12:17:56 -0700
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:19:35 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate
+
+You have 1 pending migration:
+
+db/migrate/20250220191914_add_inventory_count_to_products.rb
+
+
+):
+  
+activerecord (8.0.1) lib/active_record/migration.rb:743:in 'ActiveRecord::Migration.check_pending_migrations'
+activerecord (8.0.1) lib/active_record/migration.rb:660:in 'block (2 levels) in ActiveRecord::Migration::CheckPending#call'
+activesupport (8.0.1) lib/active_support/file_update_checker.rb:85:in 'ActiveSupport::FileUpdateChecker#execute'
+activerecord (8.0.1) lib/active_record/migration.rb:665:in 'block in ActiveRecord::Migration::CheckPending#call'
+activerecord (8.0.1) lib/active_record/migration.rb:657:in 'Thread::Mutex#synchronize'
+activerecord (8.0.1) lib/active_record/migration.rb:657:in 'ActiveRecord::Migration::CheckPending#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:31:in 'block in ActionDispatch::Callbacks#call'
+activesupport (8.0.1) lib/active_support/callbacks.rb:100:in 'ActiveSupport::Callbacks#run_callbacks'
+actionpack (8.0.1) lib/action_dispatch/middleware/callbacks.rb:30:in 'ActionDispatch::Callbacks#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in 'ActionDispatch::ActionableExceptions#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:31:in 'ActionDispatch::DebugExceptions#call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in 'WebConsole::Middleware#call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in 'block in WebConsole::Middleware#call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'Kernel#catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in 'WebConsole::Middleware#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/show_exceptions.rb:32:in 'ActionDispatch::ShowExceptions#call'
+railties (8.0.1) lib/rails/rack/logger.rb:41:in 'Rails::Rack::Logger#call_app'
+railties (8.0.1) lib/rails/rack/logger.rb:29:in 'Rails::Rack::Logger#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/remote_ip.rb:96:in 'ActionDispatch::RemoteIp#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/request_id.rb:34:in 'ActionDispatch::RequestId#call'
+rack (3.1.9) lib/rack/method_override.rb:28:in 'Rack::MethodOverride#call'
+rack (3.1.9) lib/rack/runtime.rb:24:in 'Rack::Runtime#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:61:in 'block in ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:26:in 'ActionDispatch::ServerTiming::Subscriber#collect_events'
+actionpack (8.0.1) lib/action_dispatch/middleware/server_timing.rb:60:in 'ActionDispatch::ServerTiming#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/executor.rb:16:in 'ActionDispatch::Executor#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/static.rb:27:in 'ActionDispatch::Static#call'
+rack (3.1.9) lib/rack/sendfile.rb:114:in 'Rack::Sendfile#call'
+actionpack (8.0.1) lib/action_dispatch/middleware/host_authorization.rb:143:in 'ActionDispatch::HostAuthorization#call'
+railties (8.0.1) lib/rails/engine.rb:535:in 'Rails::Engine#call'
+puma (6.6.0) lib/puma/configuration.rb:279:in 'Puma::Configuration::ConfigMiddleware#call'
+puma (6.6.0) lib/puma/request.rb:99:in 'block in Puma::Request#handle_request'
+puma (6.6.0) lib/puma/thread_pool.rb:390:in 'Puma::ThreadPool#with_force_shutdown'
+puma (6.6.0) lib/puma/request.rb:98:in 'Puma::Request#handle_request'
+puma (6.6.0) lib/puma/server.rb:472:in 'Puma::Server#process_client'
+puma (6.6.0) lib/puma/server.rb:254:in 'block in Puma::Server#run'
+puma (6.6.0) lib/puma/thread_pool.rb:167:in 'block in Puma::ThreadPool#spawn_thread'
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Migrating to AddInventoryCountToProducts (20250220191914)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "products" ADD "inventory_count" integer /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250220191914') RETURNING "version" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:20:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (2.9ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 46.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 49.5ms | GC: 0.0ms)
+Completed 200 OK in 112ms (Views: 47.2ms | ActiveRecord: 5.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2025-02-20 12:20:12 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "4"}
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 4 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/4-20250216232532171587 (10.6ms)
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 4 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 53.7ms | GC: 0.0ms)
+Write fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/4-20250216232532171587 (0.6ms)
+  [1m[36mSession Load (0.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 155.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 157.9ms | GC: 0.0ms)
+Completed 200 OK in 178ms (Views: 156.4ms | ActiveRecord: 2.8ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products" for 127.0.0.1 at 2025-02-20 12:20:24 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 7.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 9.4ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2025-02-20 12:20:25 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/1-20250210031140240033 (0.5ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 1 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 3.0ms | GC: 0.0ms)
+Write fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/1-20250210031140240033 (0.3ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 16.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 18.2ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 18.5ms | ActiveRecord: 0.3ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/products/1/subscribers" for 127.0.0.1 at 2025-02-20 12:21:09 -0700
+Processing by SubscribersController#create as HTML
+  Parameters: {"authenticity_token" => "[FILTERED]", "subscriber" => {"email" => "[FILTERED]"}, "commit" => "Submit", "product_id" => "1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='create',application='Store',controller='subscribers'*/[0m
+  ↳ app/controllers/subscribers_controller.rb:13:in 'SubscribersController#set_product'
+  [1m[36mSubscriber Load (0.1ms)[0m  [1m[34mSELECT "subscribers".* FROM "subscribers" WHERE "subscribers"."product_id" = 1 AND "subscribers"."email" = 'subscriber@example.com' ORDER BY "subscribers"."id" ASC LIMIT 1 /*action='create',application='Store',controller='subscribers'*/[0m
+  ↳ app/controllers/subscribers_controller.rb:6:in 'SubscribersController#create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Store',controller='subscribers'*/[0m
+  ↳ app/controllers/subscribers_controller.rb:6:in 'SubscribersController#create'
+  [1m[36mSubscriber Create (1.8ms)[0m  [1m[32mINSERT INTO "subscribers" ("product_id", "email", "created_at", "updated_at") VALUES (1, 'subscriber@example.com', '2025-02-20 19:21:09.484311', '2025-02-20 19:21:09.484311') RETURNING "id" /*action='create',application='Store',controller='subscribers'*/[0m
+  ↳ app/controllers/subscribers_controller.rb:6:in 'SubscribersController#create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Store',controller='subscribers'*/[0m
+  ↳ app/controllers/subscribers_controller.rb:6:in 'SubscribersController#create'
+Redirected to http://127.0.0.1:3000/products/1
+Completed 302 Found in 63ms (ActiveRecord: 3.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2025-02-20 12:21:09 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/1-20250210031140240033 (0.1ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 7.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 9.5ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:49:34 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (3.0ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 50.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | GC: 0.0ms)
+Completed 200 OK in 189ms (Views: 51.6ms | ActiveRecord: 6.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2025-02-20 12:49:44 -0700
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 18.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 22.8ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:49:47 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 9.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 14.8ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/1" for 127.0.0.1 at 2025-02-20 12:49:48 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/1-20250210031140240033 (9.1ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 1 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 25.1ms | GC: 0.0ms)
+Write fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/1-20250210031140240033 (2.1ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 124.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 125.7ms | GC: 0.0ms)
+Completed 200 OK in 138ms (Views: 124.0ms | ActiveRecord: 2.2ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:49:51 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 5.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 10.6ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/4" for 127.0.0.1 at 2025-02-20 12:49:52 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "4"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 4 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/4-20250216232532171587 (0.4ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 4 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 6.7ms | GC: 0.0ms)
+Write fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/4-20250216232532171587 (0.2ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 26.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 27.5ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 27.7ms | ActiveRecord: 0.3ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:49:53 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 11.9ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/6" for 127.0.0.1 at 2025-02-20 12:49:54 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "6"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 6 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/6-20250217132447962240 (0.1ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 6 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 3.1ms | GC: 1.5ms)
+Write fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/6-20250217132447962240 (0.1ms)
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 24.6ms | GC: 7.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | GC: 7.7ms)
+Completed 200 OK in 38ms (Views: 26.9ms | ActiveRecord: 0.3ms (4 queries, 0 cached) | GC: 7.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:49:58 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 8.1ms | GC: 5.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | GC: 6.1ms)
+Completed 200 OK in 20ms (Views: 10.0ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 6.8ms)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2025-02-20 12:50:04 -0700
+Processing by ProductsController#new as HTML
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='new',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 9.1ms | GC: 1.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 9.9ms | GC: 1.3ms)
+Completed 200 OK in 26ms (Views: 10.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:50:06 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 7.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | GC: 0.0ms)
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/products/2" for 127.0.0.1 at 2025-02-20 12:50:07 -0700
+Processing by ProductsController#show as HTML
+  Parameters: {"id" => "2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/products_controller.rb:43:in 'ProductsController#set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+Read fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/2-20250217140938431927 (0.3ms)
+  [1m[36mActionText::RichText Load (0.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = 2 AND "action_text_rich_texts"."record_type" = 'Product' AND "action_text_rich_texts"."name" = 'description' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:3
+  Rendered /home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'Product' AND "active_storage_attachments"."name" = 'featured_image' LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/views/products/show.html.erb:4
+  Rendered products/_inventory.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Write fragment views/products/show:9fef15f894d356e1dadc964110465ac8/products/2-20250217140938431927 (0.3ms)
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='show',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  Rendered products/show.html.erb within layouts/application (Duration: 70.3ms | GC: 2.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 70.9ms | GC: 2.2ms)
+Completed 200 OK in 81ms (Views: 70.4ms | ActiveRecord: 0.8ms (5 queries, 0 cached) | GC: 2.9ms)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--d3901fd32ca4c4d4fd7e409a9962ced254679cbd/Screenshot%20from%202025-02-17%2006-43-25.png" for 127.0.0.1 at 2025-02-20 12:50:07 -0700
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id" => "eyJfcmFpbHMiOnsiZGF0YSI6MSwicHVyIjoiYmxvYl9pZCJ9fQ==--d3901fd32ca4c4d4fd7e409a9962ced254679cbd", "filename" => "Screenshot from 2025-02-17 06-43-25"}
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = 1 LIMIT 1 /*action='show',application='Store',controller='redirect'*/[0m
+[36m  Disk Storage (6.7ms) [0m[34mGenerated URL for file at key: e73kjk096i79kyc20dkaq7jbl64t (http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0yMFQxOTo1NTowNy44OTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--b99cc4d1625365b1a6c6fa2ab5864ec26760e324/Screenshot%20from%202025-02-17%2006-43-25.png)[0m
+Redirected to http://127.0.0.1:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0yMFQxOTo1NTowNy44OTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--b99cc4d1625365b1a6c6fa2ab5864ec26760e324/Screenshot%20from%202025-02-17%2006-43-25.png
+Completed 302 Found in 50ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsiZGF0YSI6eyJrZXkiOiJlNzNramswOTZpNzlreWMyMGRrYXE3amJsNjR0IiwiZGlzcG9zaXRpb24iOiJpbmxpbmU7IGZpbGVuYW1lPVwiU2NyZWVuc2hvdCBmcm9tIDIwMjUtMDItMTcgMDYtNDMtMjUucG5nXCI7IGZpbGVuYW1lKj1VVEYtOCcnU2NyZWVuc2hvdCUyMGZyb20lMjAyMDI1LTAyLTE3JTIwMDYtNDMtMjUucG5nIiwiY29udGVudF90eXBlIjoiaW1hZ2UvcG5nIiwic2VydmljZV9uYW1lIjoibG9jYWwifSwiZXhwIjoiMjAyNS0wMi0yMFQxOTo1NTowNy44OTlaIiwicHVyIjoiYmxvYl9rZXkifX0=--b99cc4d1625365b1a6c6fa2ab5864ec26760e324/Screenshot%20from%202025-02-17%2006-43-25.png" for 127.0.0.1 at 2025-02-20 12:50:07 -0700
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key" => "[FILTERED]", "filename" => "Screenshot from 2025-02-17 06-43-25"}
+Completed 200 OK in 10ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-02-20 12:50:11 -0700
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mSession Load (0.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" WHERE "sessions"."id" = 11 LIMIT 1 /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/controllers/concerns/authentication.rb:29:in 'Authentication#find_session_by_cookie'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" /*action='index',application='Store',controller='products'*/[0m
+  ↳ app/views/products/index.html.erb:7
+  Rendered products/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | GC: 0.0ms)
+Completed 200 OK in 18ms (Views: 8.1ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m

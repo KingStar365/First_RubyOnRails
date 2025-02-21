@@ -1,0 +1,378 @@
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "action_text_rich_texts"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "action_text_rich_texts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "body" text, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_action_text_rich_texts_uniqueness" ON "action_text_rich_texts" ("record_type", "record_id", "name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "key" varchar NOT NULL, "filename" varchar NOT NULL, "content_type" varchar, "metadata" text, "service_name" varchar NOT NULL, "byte_size" bigint NOT NULL, "checksum" varchar, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "inventory_count" integer)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "sessions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "ip_address" varchar, "user_agent" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_sessions_on_user_id" ON "sessions" ("user_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "subscribers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "subscribers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_subscribers_on_product_id" ON "subscribers" ("product_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email_address" varchar NOT NULL, "password_digest" varchar NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email_address" ON "users" ("email_address")[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_attachments_uniqueness" ON "aactive_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_aactive_storage_attachments_on_blob_id" ON "aactive_storage_attachments" ("blob_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "active_storage_attachments"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "active_storage_attachments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "record_type" varchar NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("id","name","record_type","record_id","blob_id","created_at")
+                     SELECT "id","name","record_type","record_id","blob_id","created_at" FROM "aactive_storage_attachments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aactive_storage_attachments"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aactive_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "tindex_aactive_storage_variant_records_uniqueness" ON "aactive_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "aactive_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "active_storage_variant_records"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "active_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "blob_id" bigint NOT NULL, "variation_digest" varchar NOT NULL, CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "active_storage_variant_records" ("id","blob_id","variation_digest")
+                     SELECT "id","blob_id","variation_digest" FROM "aactive_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "aactive_storage_variant_records"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "asessions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "ip_address" varchar, "user_agent" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asessions_on_user_id" ON "asessions" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "asessions" ("id","user_id","ip_address","user_agent","created_at","updated_at")
+                     SELECT "id","user_id","ip_address","user_agent","created_at","updated_at" FROM "sessions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "sessions"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer NOT NULL, "ip_address" varchar, "user_agent" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_758836b4f0"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_sessions_on_user_id" ON "sessions" ("user_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "sessions" ("id","user_id","ip_address","user_agent","created_at","updated_at")
+                     SELECT "id","user_id","ip_address","user_agent","created_at","updated_at" FROM "asessions"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "asessions"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "asubscribers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "tindex_asubscribers_on_product_id" ON "asubscribers" ("product_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "asubscribers" ("id","product_id","email","created_at","updated_at")
+                     SELECT "id","product_id","email","created_at","updated_at" FROM "subscribers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "subscribers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "subscribers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer NOT NULL, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_17ccf21a20"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_subscribers_on_product_id" ON "subscribers" ("product_id")[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "subscribers" ("id","product_id","email","created_at","updated_at")
+                     SELECT "id","product_id","email","created_at","updated_at" FROM "asubscribers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE "asubscribers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250220191914)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250220030832),
+(20250217124911),
+(20250217124910),
+(20250216224451),
+(20250216224450),
+(20250210020705);[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'test', '2025-02-21 18:03:26.656721', '2025-02-21 18:03:26.656723') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '879082b4475051236c678849582e9de03036f47c', '2025-02-21 18:03:26.665123', '2025-02-21 18:03:26.665125') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts";
+DELETE FROM "products";
+DELETE FROM "subscribers";
+DELETE FROM "users";
+INSERT INTO "products" ("id", "name", "created_at", "updated_at", "inventory_count") VALUES (754382202, 'T-Shirt', '2025-02-21 18:03:26.942470', '2025-02-21 18:03:26.942470', 15);
+INSERT INTO "subscribers" ("id", "product_id", "email", "created_at", "updated_at") VALUES (127326141, 754382202, 'david@example.org', '2025-02-21 18:03:26.944339', '2025-02-21 18:03:26.944339'), (207907133, 754382202, 'chris@example.org', '2025-02-21 18:03:26.944339', '2025-02-21 18:03:26.944339');
+INSERT INTO "users" ("id", "email_address", "password_digest", "created_at", "updated_at") VALUES (980190962, 'one@example.com', '$2a$12$4u8bajOWGAR5o80FIOsGTOGm/dKQD1QPWs0F8iLJ8ffgINXTIEyQy', '2025-02-21 18:03:26.945178', '2025-02-21 18:03:26.945178'), (298486374, 'two@example.com', '$2a$12$4u8bajOWGAR5o80FIOsGTOGm/dKQD1QPWs0F8iLJ8ffgINXTIEyQy', '2025-02-21 18:03:26.945178', '2025-02-21 18:03:26.945178')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------------------------------------
+ProductTest: test_sends_email_notifications_when_back_in_stock
+--------------------------------------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 754382202], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Update (0.2ms)[0m  [1m[33mUPDATE "products" SET "updated_at" = ?, "inventory_count" = ? WHERE "products"."id" = ?[0m  [["updated_at", "2025-02-21 18:03:26.958819"], ["inventory_count", 0], ["id", 754382202]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mProduct Update (0.4ms)[0m  [1m[33mUPDATE "products" SET "inventory_count" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["inventory_count", 99], ["updated_at", "2025-02-21 18:03:26.972101"], ["id", 754382202]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mSubscriber Load (0.1ms)[0m  [1m[34mSELECT "subscribers".* FROM "subscribers" WHERE "subscribers"."product_id" = ?[0m  [["product_id", 754382202]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a97fe1ad-4102-464a-aeca-38e977b7ca9f]   [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 754382202], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a97fe1ad-4102-464a-aeca-38e977b7ca9f]   [1m[36mSubscriber Load (0.1ms)[0m  [1m[34mSELECT "subscribers".* FROM "subscribers" WHERE "subscribers"."id" = ? LIMIT ?[0m  [["id", 127326141], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a97fe1ad-4102-464a-aeca-38e977b7ca9f] Performing ActionMailer::MailDeliveryJob (Job ID: a97fe1ad-4102-464a-aeca-38e977b7ca9f) from Test(default) enqueued at 2025-02-21T18:03:26.985081811Z with arguments: "ProductMailer", "in_stock", "deliver_now", {params: {product: #<GlobalID:0x00007d4a7faedfc0 @uri=#<URI::GID gid://store/Product/754382202>>, subscriber: #<GlobalID:0x00007d4a7faed610 @uri=#<URI::GID gid://store/Subscriber/127326141>>}, args: []}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a97fe1ad-4102-464a-aeca-38e977b7ca9f]   Rendering layout layouts/mailer.html.erb
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a97fe1ad-4102-464a-aeca-38e977b7ca9f]   Rendering product_mailer/in_stock.html.erb within layouts/mailer
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a97fe1ad-4102-464a-aeca-38e977b7ca9f]   Rendered product_mailer/in_stock.html.erb within layouts/mailer (Duration: 1.8ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a97fe1ad-4102-464a-aeca-38e977b7ca9f]   Rendered layout layouts/mailer.html.erb (Duration: 2.4ms | GC: 0.0ms)
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a97fe1ad-4102-464a-aeca-38e977b7ca9f] ProductMailer#in_stock: processed outbound mail in 78.3ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [a97fe1ad-4102-464a-aeca-38e977b7ca9f] Error performing ActionMailer::MailDeliveryJob (Job ID: a97fe1ad-4102-464a-aeca-38e977b7ca9f) from Test(default) in 82.45ms: ActionView::Template::Error (No route matches {action: "show", controller: "unsubscribe", token: "eyJfcmFpbHMiOnsiZGF0YSI6WzEyNzMyNjE0MV0sInB1ciI6IlN1YnNjcmliZXJcbnVuc3Vic2NyaWJlXG4ifX0=--a64c7f28484f1368f5d99fdb1b182a323f6d0125"}, missing required keys: [:id]):
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/action_dispatch/journey/formatter.rb:46:in 'ActionDispatch::Journey::Formatter::MissingRoute#path'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/action_dispatch/routing/route_set.rb:880:in 'ActionDispatch::Routing::RouteSet#url_for'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/action_dispatch/routing/route_set.rb:289:in 'ActionDispatch::Routing::RouteSet::NamedRouteCollection::UrlHelper#call'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/action_dispatch/routing/route_set.rb:232:in 'ActionDispatch::Routing::RouteSet::NamedRouteCollection::UrlHelper::OptimizedUrlHelper#call'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/action_dispatch/routing/route_set.rb:345:in 'block in define_url_helper'
+/home/robbie-stewart/Documents/First_RubyOnRails/app/views/product_mailer/in_stock.html.erb:4:in '_app_views_product_mailer_in_stock_html_erb___696030771418598593_7624'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/base.rb:281:in 'Kernel#public_send'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/base.rb:281:in 'ActionView::Base#_run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/template.rb:284:in 'block in ActionView::Template#render'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:212:in 'ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/template.rb:583:in 'ActionView::Template#instrument_render_template'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/template.rb:272:in 'ActionView::Template#render'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/renderer/template_renderer.rb:66:in 'block (2 levels) in ActionView::TemplateRenderer#render_template'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/renderer/template_renderer.rb:60:in 'block in ActionView::TemplateRenderer#render_template'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/renderer/template_renderer.rb:76:in 'block in ActionView::TemplateRenderer#render_with_layout'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/renderer/template_renderer.rb:75:in 'ActionView::TemplateRenderer#render_with_layout'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/renderer/template_renderer.rb:59:in 'ActionView::TemplateRenderer#render_template'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/renderer/template_renderer.rb:11:in 'ActionView::TemplateRenderer#render'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/renderer/renderer.rb:58:in 'ActionView::Renderer#render_template_to_object'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/renderer/renderer.rb:31:in 'ActionView::Renderer#render_to_object'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/rendering.rb:136:in 'block in ActionView::Rendering#_render_template'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/base.rb:308:in 'ActionView::Base#in_rendering_context'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/rendering.rb:135:in 'ActionView::Rendering#_render_template'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/rendering.rb:122:in 'ActionView::Rendering#render_to_body'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/abstract_controller/rendering.rb:28:in 'AbstractController::Rendering#render'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/base.rb:1003:in 'block in ActionMailer::Base#collect_responses_from_templates'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/base.rb:1000:in 'Array#each'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/base.rb:1000:in 'Enumerator#each'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/base.rb:1000:in 'Enumerable#map'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/base.rb:1000:in 'ActionMailer::Base#collect_responses_from_templates'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/base.rb:978:in 'ActionMailer::Base#collect_responses'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/base.rb:886:in 'ActionMailer::Base#mail'
+/home/robbie-stewart/Documents/First_RubyOnRails/app/mailers/product_mailer.rb:9:in 'ProductMailer#in_stock'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/abstract_controller/base.rb:226:in 'AbstractController::Base#process_action'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/abstract_controller/callbacks.rb:261:in 'block in AbstractController::Callbacks#process_action'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:120:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/lib/action_text/rendering.rb:25:in 'ActionText::Rendering::ClassMethods#with_renderer'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actiontext-8.0.1/lib/action_text/engine.rb:71:in 'block (4 levels) in <class:Engine>'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:140:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/abstract_controller/callbacks.rb:260:in 'AbstractController::Callbacks#process_action'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionpack-8.0.1/lib/abstract_controller/base.rb:163:in 'AbstractController::Base#process'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/rescuable.rb:29:in 'block in ActionMailer::Rescuable#process'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/rescuable.rb:21:in 'ActionMailer::Rescuable#handle_exceptions'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/rescuable.rb:28:in 'ActionMailer::Rescuable#process'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionview-8.0.1/lib/action_view/rendering.rb:40:in 'ActionView::Rendering#process'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/base.rb:657:in 'block in ActionMailer::Base#process'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/base.rb:656:in 'ActionMailer::Base#process'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/parameterized.rb:140:in 'block in ActionMailer::Parameterized::MessageDelivery#processed_mailer'
+<internal:kernel>:91:in 'Kernel#tap'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/parameterized.rb:138:in 'ActionMailer::Parameterized::MessageDelivery#processed_mailer'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/message_delivery.rb:124:in 'ActionMailer::MessageDelivery#deliver_now'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/mail_delivery_job.rb:28:in 'ActionMailer::MailDeliveryJob#perform'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/execution.rb:68:in 'block in ActiveJob::Execution#_perform_job'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:120:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/i18n-1.14.7/lib/i18n.rb:353:in 'I18n::Base#with_locale'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/translation.rb:9:in 'block (2 levels) in <module:Translation>'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/core_ext/time/zones.rb:65:in 'Time.use_zone'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/timezones.rb:9:in 'block (2 levels) in <module:Timezones>'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:140:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/execution.rb:67:in 'ActiveJob::Execution#_perform_job'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/instrumentation.rb:32:in 'ActiveJob::Instrumentation#_perform_job'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/execution.rb:51:in 'ActiveJob::Execution#perform_now'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/instrumentation.rb:26:in 'block in ActiveJob::Instrumentation#perform_now'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/railties/job_runtime.rb:13:in 'block in ActiveRecord::Railties::JobRuntime#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/instrumentation.rb:40:in 'block in ActiveJob::Instrumentation#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/instrumentation.rb:39:in 'ActiveJob::Instrumentation#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/railties/job_runtime.rb:11:in 'ActiveRecord::Railties::JobRuntime#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/instrumentation.rb:26:in 'ActiveJob::Instrumentation#perform_now'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/logging.rb:32:in 'block in ActiveJob::Logging#perform_now'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/tagged_logging.rb:143:in 'block in ActiveSupport::TaggedLogging#tagged'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/tagged_logging.rb:38:in 'ActiveSupport::TaggedLogging::Formatter#tagged'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/tagged_logging.rb:143:in 'ActiveSupport::TaggedLogging#tagged'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/broadcast_logger.rb:241:in 'ActiveSupport::BroadcastLogger#method_missing'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/logging.rb:39:in 'ActiveJob::Logging#tag_logger'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/logging.rb:32:in 'ActiveJob::Logging#perform_now'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/execution.rb:29:in 'block in ActiveJob::Execution::ClassMethods#execute'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:120:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/railtie.rb:95:in 'block (4 levels) in <class:Railtie>'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/reloader.rb:77:in 'block in ActiveSupport::Reloader.wrap'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/execution_wrapper.rb:91:in 'ActiveSupport::ExecutionWrapper.wrap'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/reloader.rb:74:in 'ActiveSupport::Reloader.wrap'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/railtie.rb:94:in 'block (3 levels) in <class:Railtie>'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:140:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/execution.rb:27:in 'ActiveJob::Execution::ClassMethods#execute'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/queue_adapters/test_adapter.rb:51:in 'ActiveJob::QueueAdapters::TestAdapter#perform_or_enqueue'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/queue_adapters/test_adapter.rb:30:in 'ActiveJob::QueueAdapters::TestAdapter#enqueue'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/enqueuing.rb:132:in 'ActiveJob::Enqueuing#raw_enqueue'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/enqueue_after_transaction_commit.rb:40:in 'ActiveJob::EnqueueAfterTransactionCommit#raw_enqueue'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/enqueuing.rb:117:in 'block in ActiveJob::Enqueuing#enqueue'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:120:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/instrumentation.rb:40:in 'block in ActiveJob::Instrumentation#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'block in ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications/instrumenter.rb:58:in 'ActiveSupport::Notifications::Instrumenter#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/notifications.rb:210:in 'ActiveSupport::Notifications.instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/instrumentation.rb:39:in 'ActiveJob::Instrumentation#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/railties/job_runtime.rb:18:in 'ActiveRecord::Railties::JobRuntime#instrument'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/instrumentation.rb:21:in 'block (2 levels) in <module:Instrumentation>'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/tagged_logging.rb:143:in 'block in ActiveSupport::TaggedLogging#tagged'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/tagged_logging.rb:38:in 'ActiveSupport::TaggedLogging::Formatter#tagged'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/tagged_logging.rb:143:in 'ActiveSupport::TaggedLogging#tagged'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/broadcast_logger.rb:241:in 'ActiveSupport::BroadcastLogger#method_missing'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/logging.rb:39:in 'ActiveJob::Logging#tag_logger'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/logging.rb:28:in 'block (2 levels) in <module:Logging>'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'BasicObject#instance_exec'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:129:in 'block in ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:140:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/enqueuing.rb:116:in 'ActiveJob::Enqueuing#enqueue'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/configured_job.rb:15:in 'ActiveJob::ConfiguredJob#perform_later'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/parameterized.rb:148:in 'ActionMailer::Parameterized::MessageDelivery#enqueue_delivery'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/message_delivery.rb:103:in 'ActionMailer::MessageDelivery#deliver_later'
+/home/robbie-stewart/Documents/First_RubyOnRails/app/models/product.rb:16:in 'block in Product#notify_subscribers'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/relation/delegation.rb:101:in 'Array#each'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/relation/delegation.rb:101:in 'ActiveRecord::Delegation#each'
+/home/robbie-stewart/Documents/First_RubyOnRails/app/models/product.rb:15:in 'Product#notify_subscribers'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:361:in 'block in ActiveSupport::Callbacks::CallTemplate::MethodCall#make_lambda'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:207:in 'ActiveSupport::Callbacks::Filters::After#call'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:562:in 'block in ActiveSupport::Callbacks::CallbackSequence#invoke_after'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:562:in 'Array#each'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:562:in 'ActiveSupport::Callbacks::CallbackSequence#invoke_after'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:110:in 'ActiveSupport::Callbacks#run_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/callbacks.rb:912:in 'ActiveRecord::Base#_run_commit_callbacks'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/transactions.rb:385:in 'ActiveRecord::Transactions#committed!'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/transaction.rb:307:in 'block in ActiveRecord::ConnectionAdapters::Transaction#commit_records'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/transaction.rb:344:in 'ActiveRecord::ConnectionAdapters::Transaction#run_action_on_records'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/transaction.rb:306:in 'ActiveRecord::ConnectionAdapters::Transaction#commit_records'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/transaction.rb:606:in 'block in ActiveRecord::ConnectionAdapters::TransactionManager#commit_transaction'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:23:in 'Thread.handle_interrupt'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:23:in 'block in ActiveSupport::Concurrency::LoadInterlockAwareMonitorMixin#synchronize'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:19:in 'Thread.handle_interrupt'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:19:in 'ActiveSupport::Concurrency::LoadInterlockAwareMonitorMixin#synchronize'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/transaction.rb:594:in 'ActiveRecord::ConnectionAdapters::TransactionManager#commit_transaction'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/transaction.rb:638:in 'block in ActiveRecord::ConnectionAdapters::TransactionManager#within_new_transaction'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:23:in 'Thread.handle_interrupt'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:23:in 'block in ActiveSupport::Concurrency::LoadInterlockAwareMonitorMixin#synchronize'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:19:in 'Thread.handle_interrupt'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/concurrency/load_interlock_aware_monitor.rb:19:in 'ActiveSupport::Concurrency::LoadInterlockAwareMonitorMixin#synchronize'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/transaction.rb:623:in 'ActiveRecord::ConnectionAdapters::TransactionManager#within_new_transaction'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/database_statements.rb:367:in 'ActiveRecord::ConnectionAdapters::DatabaseStatements#within_new_transaction'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/database_statements.rb:359:in 'ActiveRecord::ConnectionAdapters::DatabaseStatements#transaction'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/transactions.rb:414:in 'block in ActiveRecord::Transactions#with_transaction_returning_status'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_adapters/abstract/connection_pool.rb:412:in 'ActiveRecord::ConnectionAdapters::ConnectionPool#with_connection'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/connection_handling.rb:310:in 'ActiveRecord::ConnectionHandling#with_connection'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/transactions.rb:410:in 'ActiveRecord::Transactions#with_transaction_returning_status'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activerecord-8.0.1/lib/active_record/persistence.rb:566:in 'ActiveRecord::Persistence#update'
+/home/robbie-stewart/Documents/First_RubyOnRails/test/models/product_test.rb:13:in 'block (2 levels) in <class:ProductTest>'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/testing/assertions.rb:49:in 'ActiveSupport::Testing::Assertions#assert_nothing_raised'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/testing/assertions.rb:287:in 'ActiveSupport::Testing::Assertions#_assert_nothing_raised_or_warn'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activejob-8.0.1/lib/active_job/test_helper.rb:645:in 'ActiveJob::TestHelper#perform_enqueued_jobs'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/test_helper.rb:232:in 'ActionMailer::TestHelper#deliver_enqueued_emails'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/test_helper.rb:251:in 'ActionMailer::TestHelper#capture_emails'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/actionmailer-8.0.1/lib/action_mailer/test_helper.rb:37:in 'ActionMailer::TestHelper#assert_emails'
+/home/robbie-stewart/Documents/First_RubyOnRails/test/models/product_test.rb:12:in 'block in <class:ProductTest>'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest/test.rb:94:in 'block (2 levels) in Minitest::Test#run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest/test.rb:190:in 'Minitest::Test#capture_exceptions'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest/test.rb:89:in 'block in Minitest::Test#run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:368:in 'Minitest::Runnable#time_it'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest/test.rb:88:in 'Minitest::Test#run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/executor/test_helper.rb:5:in 'block in ActiveSupport::Executor::TestHelper#run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/execution_wrapper.rb:104:in 'ActiveSupport::ExecutionWrapper.perform'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/activesupport-8.0.1/lib/active_support/executor/test_helper.rb:5:in 'ActiveSupport::Executor::TestHelper#run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:1208:in 'Minitest.run_one_method'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:447:in 'Minitest::Runnable.run_one_method'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:434:in 'block (2 levels) in Minitest::Runnable.run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:430:in 'Array#each'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:430:in 'block in Minitest::Runnable.run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:472:in 'Minitest::Runnable.on_signal'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:459:in 'Minitest::Runnable.with_info_handler'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:429:in 'Minitest::Runnable.run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/railties-8.0.1/lib/rails/test_unit/line_filtering.rb:10:in 'Rails::LineFiltering#run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:332:in 'block in Minitest.__run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:332:in 'Array#map'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:332:in 'Minitest.__run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:288:in 'Minitest.run'
+/home/robbie-stewart/.local/share/mise/installs/ruby/3.4.1/lib/ruby/gems/3.4.0/gems/minitest-5.25.4/lib/minitest.rb:86:in 'block in Minitest.autorun'
+[ActiveJob] Failed enqueuing ActionMailer::MailDeliveryJob to Test(default): ActionView::Template::Error (No route matches {action: "show", controller: "unsubscribe", token: "eyJfcmFpbHMiOnsiZGF0YSI6WzEyNzMyNjE0MV0sInB1ciI6IlN1YnNjcmliZXJcbnVuc3Vic2NyaWJlXG4ifX0=--a64c7f28484f1368f5d99fdb1b182a323f6d0125"}, missing required keys: [:id])
+ProductTest - test_sends_email_notifications_when_back_in_stock: ActionView::Template::Error raised.
+If you expected this exception, use `assert_raises` as near to the code that raises as possible.
+Other block based assertions (e.g. `perform_enqueued_jobs`) can be used, as long as `assert_raises` is inside their block.
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+--------------------------------
+ProductMailerTest: test_in_stock
+--------------------------------
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 754382202], ["LIMIT", 1]]
+  [1m[36mSubscriber Load (0.1ms)[0m  [1m[34mSELECT "subscribers".* FROM "subscribers" WHERE "subscribers"."id" = ? LIMIT ?[0m  [["id", 127326141], ["LIMIT", 1]]
+  Rendering layout layouts/mailer.html.erb
+  Rendering product_mailer/in_stock.html.erb within layouts/mailer
+  Rendered product_mailer/in_stock.html.erb within layouts/mailer (Duration: 0.3ms | GC: 0.0ms)
+  Rendered layout layouts/mailer.html.erb (Duration: 0.4ms | GC: 0.0ms)
+ProductMailer#in_stock: processed outbound mail in 1.0ms
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

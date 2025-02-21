@@ -15,8 +15,8 @@ Things you may want to cover:
 * System dependencies
 
 * Configuration
-  1. start: bin/rails server
-  2. migrate: bin/rails migrate
+  start: bin/rails server
+  migrate: bin/rails migrate
 * Database creation
   1. bin/rails generate model Product name:string
   2. Createing Records: Product.new(name: "")
